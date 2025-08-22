@@ -31,7 +31,7 @@ const manifest = {
   version: packageJson.version,
   description: '__MSG_extensionDescription__',
   host_permissions: ['<all_urls>'],
-  permissions: ['storage', 'scripting', 'tabs', 'notifications', 'sidePanel'],
+  permissions: ['storage', 'scripting', 'tabs', 'notifications', 'sidePanel', 'downloads'],
   options_page: 'options/index.html',
   background: {
     service_worker: 'background.js',
@@ -55,6 +55,10 @@ const manifest = {
     {
       matches: ['https://example.com/*'],
       js: ['content/example.iife.js'],
+    },
+    {
+      matches: ['https://www.linkedin.com/jobs/*'],
+      js: ['content/linkedin.iife.js'],
     },
     {
       matches: ['http://*/*', 'https://*/*', '<all_urls>'],
